@@ -35,6 +35,22 @@ Here's a function signature to start you off:
 ```java
 void findPairs(int[] testArray, int targetSum) {
   // your code here
+  Arrays.sort(testArray);
+	int first = 0;
+	int last=testArray.length-1;
+	while(first<last) {
+
+		if (testArray[first]+testArray[last]==targetSum) {
+			System.out.println("("+testArray[first]+", "+testArray[last]+")");
+			first++;
+			last--;
+		}else if (testArray[first]+testArray[last]<targetSum) {
+			first++;	
+		}else {
+			last--;
+		}
+			
+	}
 }
 ```
 
@@ -53,6 +69,13 @@ Here's a function signature to start you off:
 ```java
 boolean isPalindrome(String testString) {
   // your code here
+  int length = testString.length();
+    for (int i = 0; i < length / 2; i++) {
+      if (testString.toCharArray()[i] != testString.toCharArray()[length - i - 1]) {
+        return false;
+      }
+        }
+        return true;
 }
 ```
 
